@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Web Audio API Example</title>
+    
     <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
-  <body>
-    <video id="video" src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" controls></video>
-    <script>
-      // create an audio context
-      const context = new AudioContext();
-      
-      // select the video element
-      const video = document.querySelector("#video");
-      
-      // create a source node from the video element
-      const source = context.createMediaElementSource(video);
-      
-      // connect the source node to the context's destination
-      source.connect(context.destination);
-    </script>
-  </body>
-</html>
+    
+    </head
+    
+<body>
 
+<!-- Input field to input youtube link -->
+<input type="text" id="youtube-link" placeholder="Enter YouTube link here">
+<button onclick="getAudio()">Get Audio</button>
+<br>
+<br>
+<audio id="audio-player" controls style="display: none;"></audio>
+<script>
+    function getAudio() {
+        var youtubeLink = document.getElementById("youtube-link").value;
+        var audioPlayer = document.getElementById("audio-player");
+        var audioSrc = "https://www.youtube.com/watch?v=" + youtubeLink;
+        audioPlayer.src = audioSrc;
+        audioPlayer.style.display = "block";
+    }
+</script>
+
+</body>
+</html>
