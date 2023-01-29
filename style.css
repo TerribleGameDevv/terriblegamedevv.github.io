@@ -1,0 +1,31 @@
+body {
+    font-family: "Inconsolata", monospace;
+    background-color: #f0f0f0;
+    color: #444;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+form {
+    margin: 0 auto;
+    width: 50%;
+    text-align: left;
+}
+
+#midi-output {
+    margin: 20px auto;
+    width: 50%;
+    text-align: left;
+}
