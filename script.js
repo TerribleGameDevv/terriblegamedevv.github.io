@@ -1,20 +1,22 @@
-const API_KEY = "AIzaSyBbhju011EtzN-elXRz_wtDfaaBI1T3DNo";
-const convertBtn = $("#convert-btn");
-const player = $("#player");
-const linkInput = $("#youtube-link");
+$(document).ready(function() {
+    // Attach click event to convert button
+    $("#convert-button").click(convertVideo);
 
-convertBtn.click(function(event) {
-  event.preventDefault();
-  const link = linkInput.val();
-  if(!link){
-    alert("Please enter a YouTube link");
-    return;
-  }
-  $.getJSON("https://yourapi.com/convert?link=" + link, function(data) {
-    const video = $("<video>", {
-      src: data.mp4Url,
-      controls: true
-    });
-    player.append(video);
-  });
+    function convertVideo() {
+        console.log("Convert button clicked");
+        $.ajax({
+            type: "POST",
+            url: "https://example.com/convert",
+            data: {
+                url: $("#youtube-link").val()
+            },
+            success: function(response) {
+                console.log("Server responded:", response);
+                $("#player").attr("src", response);
+            },
+            error: function(response) {
+                console.log("Error:", response);
+            }
+        });
+    }
 });
