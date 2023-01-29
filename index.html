@@ -6,11 +6,13 @@
   </head>
   <body>
     <h1>YouTube to MP4 Converter</h1>
-    <form id="form">
-      <label for="link">YouTube Link:</label>
-      <input type="text" id="link" name="link">
-      <button type="submit" onclick="convert()">Convert</button>
-    </form>
+ <form>
+  <label for="youtube-link">Enter YouTube Link:</label>
+  <input type="text" id="youtube-link" placeholder="https://www.youtube.com/watch?v=...">
+  <button type="button" id="convert-btn">Convert</button>
+</form>
+<div id="player"></div>
+
     <div id="player"></div>
   </body>
 </html>
